@@ -1,0 +1,27 @@
+[project]
+name = "restaurantwatcher"
+version = "0.1.0"
+description = "Watches a single restaurant's CatchTable reservation page for availability changes"
+requires-python = ">=3.11"
+dependencies = [
+    "playwright>=1.47",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["restaurantwatcher*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["restaurantwatcher"]
