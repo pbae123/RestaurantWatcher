@@ -1,6 +1,7 @@
 import datetime
 import os
 import sys
+import traceback
 from pathlib import Path
 from typing import Callable
 
@@ -83,4 +84,5 @@ if __name__ == "__main__":
     try:
         main_with_retry()
     except Exception:
+        traceback.print_exc()
         sys.exit(1)
