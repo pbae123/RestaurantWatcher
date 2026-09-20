@@ -1,5 +1,6 @@
 import datetime
 import os
+import sys
 from pathlib import Path
 from typing import Callable
 
@@ -12,6 +13,7 @@ from restaurantwatcher.discord_notifier import (
     send_discord_message,
 )
 from restaurantwatcher.models import StateSnapshot
+from restaurantwatcher.retry import run_with_retry
 from restaurantwatcher.scraper import scrape_availability
 from restaurantwatcher.state_store import load_snapshot, save_snapshot
 
@@ -56,17 +58,29 @@ def scrape_live_site(
             browser.close()
 
 
+def _webhook_url() -> str:
+    return os.environ["DISCORD_WEBHOOK_URL"]
+
+
 def main() -> StateSnapshot:
-    webhook_url = os.environ["DISCORD_WEBHOOK_URL"]
     state_path = Path(os.environ.get("STATE_FILE_PATH", DEFAULT_STATE_FILE_PATH))
 
     return run(
         scrape_fn=lambda: scrape_live_site(SHOP_URL, WATCH_WINDOW, PARTY_SIZES),
         send_fn=send_discord_message,
         state_path=state_path,
-        webhook_url=webhook_url,
+        webhook_url=_webhook_url(),
+    )
+
+
+def main_with_retry() -> StateSnapshot:
+    return run_with_retry(
+        run_fn=main, send_fn=send_discord_message, webhook_url=_webhook_url()
     )
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main_with_retry()
+    except Exception:
+        sys.exit(1)
