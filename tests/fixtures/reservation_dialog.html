@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<body>
+<button aria-label="Date • Time • guests">Date • Time • guests</button>
+<div role="dialog" hidden>
+  <button aria-label="Previous page">Previous page</button>
+  <button id="month-label">Sep 2026</button>
+  <button aria-label="Next page">Next page</button>
+  <div id="calendar"></div>
+  <p>Party Size</p>
+  <div id="party-sizes">
+    <button>1</button><button>2</button><button>3</button><button>4</button>
+  </div>
+  <div id="result"></div>
+  <button>Close</button>
+</div>
+<script>
+  const DATA = {
+    "2026-11-02": {
+      "2": { state: "AVAILABLE", times: ["12:00 PM", "7:30 PM"] },
+      "3": { state: "FULL", times: [] }
+    },
+    "2026-11-03": {
+      "2": { state: "NOT_YET_OPEN", times: [] }
+    }
+  };
+
+  const MONTHS = ["Sep 2026", "Oct 2026", "Nov 2026", "Dec 2026"];
+  let monthIndex = 0;
+  let selectedDate = null;
+  let selectedPartySize = null;
+
+  const dialog = document.querySelector('[role="dialog"]');
+  const monthLabel = document.getElementById('month-label');
+  const calendar = document.getElementById('calendar');
+  const result = document.getElementById('result');
+
+  document.querySelector('[aria-label="Date • Time • guests"]').addEventListener('click', () => {
+    dialog.hidden = false;
+    renderCalendar();
+  });
+
+  document.querySelector('[aria-label="Previous page"]').addEventListener('click', () => {
+    monthIndex = Math.max(0, monthIndex - 1);
+    renderCalendar();
+  });
+  document.querySelector('[aria-label="Next page"]').addEventListener('click', () => {
+    monthIndex = Math.min(MONTHS.length - 1, monthIndex + 1);
+    renderCalendar();
+  });
+
+  function renderCalendar() {
+    monthLabel.textContent = MONTHS[monthIndex];
+    const [monStr, yearStr] = MONTHS[monthIndex].split(' ');
+    const monthNum = { Sep: 9, Oct: 10, Nov: 11, Dec: 12 }[monStr];
+    calendar.innerHTML = '';
+    const daysInMonth = new Date(Number(yearStr), monthNum, 0).getDate();
+    for (let d = 1; d <= daysInMonth; d++) {
+      const dateObj = new Date(Number(yearStr), monthNum - 1, d);
+      const weekday = dateObj.toLocaleDateString('en-US', { weekday: 'long' });
+      const label = `${weekday}, ${monStr} ${d}, ${yearStr}`;
+      const iso = `${yearStr}-${String(monthNum).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+      const btn = document.createElement('button');
+      btn.textContent = label;
+      btn.setAttribute('aria-label', label);
+      btn.addEventListener('click', () => {
+        selectedDate = iso;
+        renderResult();
+      });
+      calendar.appendChild(btn);
+    }
+  }
+
+  document.querySelectorAll('#party-sizes button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      selectedPartySize = btn.textContent;
+      renderResult();
+    });
+  });
+
+  function renderResult() {
+    result.innerHTML = '';
+    if (selectedDate === null || selectedPartySize === null) return;
+    setTimeout(() => {
+      const entry = (DATA[selectedDate] || {})[selectedPartySize];
+      if (!entry || entry.state === 'NOT_YET_OPEN') {
+        result.innerHTML = '<p>Reservations not yet open</p>';
+      } else if (entry.state === 'AVAILABLE') {
+        entry.times.forEach((t) => {
+          const b = document.createElement('button');
+          b.textContent = t;
+          result.appendChild(b);
+        });
+      }
+    }, 30);
+  }
+
+  renderCalendar();
+</script>
+</body>
+</html>
