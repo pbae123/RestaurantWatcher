@@ -20,7 +20,7 @@ from restaurantwatcher.state_store import load_snapshot, save_snapshot
 
 SHOP_URL = "https://www.catchtable.net/shop/jungsik"
 WATCH_WINDOW = [
-    datetime.date(2026, 10, 1) + datetime.timedelta(days=offset) for offset in range(10)
+    datetime.date(2026, 11, 1) + datetime.timedelta(days=offset) for offset in range(10)
 ]
 PARTY_SIZES = [2, 3]
 DEFAULT_STATE_FILE_PATH = "state.json"
