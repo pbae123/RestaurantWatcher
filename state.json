@@ -1,0 +1,124 @@
+{
+  "entries": [
+    {
+      "date": "2026-11-01",
+      "party_size": 2,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-01",
+      "party_size": 3,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-02",
+      "party_size": 2,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-02",
+      "party_size": 3,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-03",
+      "party_size": 2,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-03",
+      "party_size": 3,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-04",
+      "party_size": 2,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-04",
+      "party_size": 3,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-05",
+      "party_size": 2,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-05",
+      "party_size": 3,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-06",
+      "party_size": 2,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-06",
+      "party_size": 3,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-07",
+      "party_size": 2,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-07",
+      "party_size": 3,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-08",
+      "party_size": 2,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-08",
+      "party_size": 3,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-09",
+      "party_size": 2,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-09",
+      "party_size": 3,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-10",
+      "party_size": 2,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    },
+    {
+      "date": "2026-11-10",
+      "party_size": 3,
+      "state": "NOT_YET_OPEN",
+      "time_slots": []
+    }
+  ]
+}
