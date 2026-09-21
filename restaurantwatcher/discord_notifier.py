@@ -42,7 +42,10 @@ def send_discord_message(webhook_url: str, content: str) -> None:
     request = urllib.request.Request(
         webhook_url,
         data=body,
-        headers={"Content-Type": "application/json"},
+        headers={
+            "Content-Type": "application/json",
+            "User-Agent": "RestaurantWatcher (https://github.com/pbae123/RestaurantWatcher, 1.0)",
+        },
         method="POST",
     )
     urllib.request.urlopen(request)

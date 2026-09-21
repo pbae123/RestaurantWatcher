@@ -93,6 +93,7 @@ class TestSendDiscordMessage:
             captured["method"] = request.get_method()
             captured["body"] = json.loads(request.data.decode("utf-8"))
             captured["content_type"] = request.get_header("Content-type")
+            captured["user_agent"] = request.get_header("User-agent")
 
         monkeypatch.setattr(
             "restaurantwatcher.discord_notifier.urllib.request.urlopen", fake_urlopen
@@ -104,3 +105,7 @@ class TestSendDiscordMessage:
         assert captured["method"] == "POST"
         assert captured["body"] == {"content": "hello"}
         assert captured["content_type"] == "application/json"
+        # Discord's webhook endpoint sits behind Cloudflare, which blocks the
+        # default urllib User-Agent ("Python-urllib/x.y") with a 403.
+        assert captured["user_agent"] not in (None, "")
+        assert "python-urllib" not in captured["user_agent"].lower()
