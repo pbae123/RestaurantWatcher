@@ -20,10 +20,8 @@
     {
       "date": "2026-11-02",
       "party_size": 2,
-      "state": "AVAILABLE",
-      "time_slots": [
-        "13:00"
-      ]
+      "state": "FULL",
+      "time_slots": []
     },
     {
       "date": "2026-11-02",
@@ -42,8 +40,7 @@
       "party_size": 2,
       "state": "AVAILABLE",
       "time_slots": [
-        "12:00",
-        "12:30"
+        "12:00"
       ]
     },
     {
@@ -64,8 +61,7 @@
       "state": "AVAILABLE",
       "time_slots": [
         "12:00",
-        "17:30",
-        "18:00"
+        "17:30"
       ]
     },
     {
@@ -86,9 +82,7 @@
       "party_size": 2,
       "state": "AVAILABLE",
       "time_slots": [
-        "12:00",
-        "12:30",
-        "17:30"
+        "12:30"
       ]
     },
     {
@@ -109,7 +103,6 @@
       "party_size": 2,
       "state": "AVAILABLE",
       "time_slots": [
-        "13:00",
         "17:30"
       ]
     },
@@ -164,9 +157,7 @@
       "party_size": 2,
       "state": "AVAILABLE",
       "time_slots": [
-        "12:00",
-        "13:00",
-        "17:30"
+        "13:00"
       ]
     },
     {
