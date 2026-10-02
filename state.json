@@ -54,10 +54,8 @@
     {
       "date": "2026-11-04",
       "party_size": 2,
-      "state": "AVAILABLE",
-      "time_slots": [
-        "17:30"
-      ]
+      "state": "FULL",
+      "time_slots": []
     },
     {
       "date": "2026-11-04",
@@ -77,8 +75,7 @@
       "party_size": 2,
       "state": "AVAILABLE",
       "time_slots": [
-        "17:30",
-        "18:00"
+        "17:30"
       ]
     },
     {
@@ -145,8 +142,7 @@
       "time_slots": [
         "12:30",
         "13:00",
-        "17:30",
-        "18:00"
+        "17:30"
       ]
     },
     {
