@@ -19,8 +19,10 @@
     {
       "date": "2026-11-02",
       "party_size": 2,
-      "state": "FULL",
-      "time_slots": []
+      "state": "AVAILABLE",
+      "time_slots": [
+        "13:00"
+      ]
     },
     {
       "date": "2026-11-02",
@@ -28,6 +30,7 @@
       "state": "AVAILABLE",
       "time_slots": [
         "12:30",
+        "13:00",
         "18:00",
         "18:30"
       ]
@@ -35,8 +38,10 @@
     {
       "date": "2026-11-03",
       "party_size": 2,
-      "state": "FULL",
-      "time_slots": []
+      "state": "AVAILABLE",
+      "time_slots": [
+        "19:00"
+      ]
     },
     {
       "date": "2026-11-03",
@@ -124,19 +129,15 @@
     {
       "date": "2026-11-08",
       "party_size": 2,
-      "state": "AVAILABLE",
-      "time_slots": [
-        "17:30"
-      ]
+      "state": "FULL",
+      "time_slots": []
     },
     {
       "date": "2026-11-08",
       "party_size": 3,
       "state": "AVAILABLE",
       "time_slots": [
-        "12:00",
-        "12:30",
-        "17:30"
+        "12:30"
       ]
     },
     {
