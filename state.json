@@ -129,10 +129,8 @@
     {
       "date": "2026-11-08",
       "party_size": 3,
-      "state": "AVAILABLE",
-      "time_slots": [
-        "12:30"
-      ]
+      "state": "FULL",
+      "time_slots": []
     },
     {
       "date": "2026-11-09",
