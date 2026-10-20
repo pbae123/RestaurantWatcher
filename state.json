@@ -80,8 +80,7 @@
       "party_size": 3,
       "state": "AVAILABLE",
       "time_slots": [
-        "12:30",
-        "17:30"
+        "12:30"
       ]
     },
     {
@@ -134,7 +133,6 @@
       "party_size": 3,
       "state": "AVAILABLE",
       "time_slots": [
-        "12:30",
         "13:00",
         "17:30"
       ]
